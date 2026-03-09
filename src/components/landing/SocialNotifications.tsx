@@ -25,9 +25,10 @@ const SocialNotifications = () => {
       setTimeout(() => setCurrent(null), 4000);
       idx = (idx + 1) % names.length;
     };
-    const id = setInterval(show, 12000);
-    const initial = setTimeout(show, 8000);
+    const id = setInterval(show, 45000);
+    const initial = setTimeout(show, 45000);
     return () => { clearInterval(id); clearTimeout(initial); };
+
   }, []);
 
   return (

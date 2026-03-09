@@ -17,7 +17,7 @@ const OrderFormSection = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const whatsappMessage = `Hi Dr. Micheal, I want to order Utero Clear.\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nAddress: ${formData.address}, ${formData.city}\nPackage: ${formData.package}`;
+  const whatsappMessage = `Hi, I want to order Utero Clear.\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nAddress: ${formData.address}, ${formData.city}\nPackage: ${formData.package}`;
 
   const handleSubmit = async (e: React.FormEvent) => {
 
@@ -43,7 +43,7 @@ const OrderFormSection = () => {
         setIsSubmitted(true);
         toast.success("Order received! Redirecting to WhatsApp...");
         setTimeout(() => {
-          window.open(`https://api.whatsapp.com/send?phone=2348080305080&text=${encodeURIComponent(whatsappMessage)}`, "_blank");
+          window.open(`https://api.whatsapp.com/send?phone=2347086865133&text=${encodeURIComponent(whatsappMessage)}`, "_blank");
         }, 1500);
       } else {
         toast.error("Something went wrong. Please try again.");
@@ -72,7 +72,7 @@ const OrderFormSection = () => {
               Thank you for choosing Utero Clear. We are now redirecting you to WhatsApp to finalize your delivery details.
             </p>
             <Button 
-              onClick={() => window.open(`https://api.whatsapp.com/send?phone=2348080305080&text=${encodeURIComponent(whatsappMessage)}`, "_blank")}
+              onClick={() => window.open(`https://api.whatsapp.com/send?phone=2347086865133&text=${encodeURIComponent(whatsappMessage)}`, "_blank")}
               className="mt-8 rounded-xl px-10 py-6"
             >
               Continue to WhatsApp

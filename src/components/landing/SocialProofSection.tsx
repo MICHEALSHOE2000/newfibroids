@@ -3,34 +3,43 @@ import { Star, Quote, PlayCircle } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import proofVideo from "@/assets/proof_video.mp4";
 import physicalProof from "@/assets/before-fib.jpg";
+import proof1 from "@/assets/proof1.jpeg";
+import proof2 from "@/assets/proof2.jpeg";
+import proof5 from "@/assets/proof5.jpeg";
+import proof6 from "@/assets/proof6.jpeg";
 
 const testimonials = [
   {
     text: "I was already preparing myself mentally for surgery. My doctor said the fibroid would only get worse. After using Utero Clear consistently, the pain reduced, the bleeding normalized, and surgery was no longer necessary.",
     name: "Blessing A.",
     location: "Lagos, Nigeria",
-    rating: 5
+    rating: 5,
+    image: proof1
   },
 
   {
     text: "I didn’t believe anything until I saw my scan. The fibroid had reduced significantly. My doctor kept asking what I did differently. That was the moment I knew this wasn’t another temporary solution.",
     name: "Ifunanya O.",
     location: "Enugu, Nigeria",
-    rating: 5
+    rating: 5,
+    image: proof2
   },
   {
     text: "For years, nothing happened. My cycle was irregular and I kept hearing ‘wait’. After treating the fibroid properly, my cycle became normal again. A few months later, I conceived.",
     name: "Chiamaka N.",
     location: "Owerri, Nigeria",
-    rating: 5
+    rating: 5,
+    image: proof5
   },
   {
     text: "I completed the protocol months ago. I’m not on any drug now. No pain. No heavy bleeding. Most importantly, the fibroid did not come back. I finally feel at peace in my body.",
     name: "Ronke T.",
     location: "Ibadan, Nigeria",
-    rating: 5
+    rating: 5,
+    image: proof6
   },
 ];
+
 
 const whatsappProofs = [
   "https://fibroidtreatment.xyz/img/test.webp",
@@ -115,8 +124,8 @@ const SocialProofSection = () => {
               </div>
               <p className="text-foreground italic leading-relaxed mb-6 text-lg">"{t.text}"</p>
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">
-                  {t.name[0]}
+                <div className="w-14 h-14 rounded-full overflow-hidden bg-primary/10 border-2 border-primary/20 shrink-0">
+                  <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <div className="font-bold text-foreground">{t.name}</div>

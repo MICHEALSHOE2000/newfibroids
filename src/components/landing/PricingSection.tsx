@@ -94,7 +94,7 @@ const PricingSection = () => {
         >
             <div className="inline-flex flex-col md:flex-row items-center gap-4 bg-muted/50 px-8 py-4 rounded-2xl border border-border">
                 <div className="flex items-center gap-2 font-bold text-foreground">
-                    <span className="text-xl">🚚</span> FREE Delivery Nationwide (No Shipping Fees)
+                    <span className="text-xl">🚚</span> FREE Delivery Nationwide
                 </div>
                 <div className="hidden md:block w-px h-4 bg-border" />
                 <div className="flex items-center gap-2 font-bold text-primary">
