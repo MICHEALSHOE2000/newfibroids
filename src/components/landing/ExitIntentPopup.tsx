@@ -65,18 +65,19 @@ const ExitIntentPopup = () => {
               Wait! Don't Leave Empty-Handed
             </h3>
             <p className="mt-2 text-sm text-muted-foreground font-body">
-              Get <span className="font-bold text-primary">FREE shipping</span> on your first order when you order in the next 15 minutes.
+              Get a <span className="font-bold text-primary">FREE Fibroid Recovery Consultation</span> when you order in the next 15 minutes.
             </p>
 
             <Button asChild className="mt-6 w-full rounded-xl py-6 text-base font-bold animate-pulse-glow">
               <a href="#order-form" onClick={dismiss}>
-                Claim Free Shipping →
+                Claim My Free Consultation →
               </a>
             </Button>
 
             <button onClick={dismiss} className="mt-3 text-xs text-muted-foreground underline font-body">
-              No thanks, I'll pay for shipping
+              No thanks, I'll pay full price
             </button>
+
           </motion.div>
         </motion.div>
       )}

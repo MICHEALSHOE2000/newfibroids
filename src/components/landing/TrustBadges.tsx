@@ -2,8 +2,9 @@ import { Shield, Truck, RotateCcw, Lock, Award } from "lucide-react";
 
 const badges = [
   { icon: Lock, label: "Secure Checkout" },
-  { icon: Truck, label: "Free Shipping" },
+  { icon: Truck, label: "Pay on Delivery" },
   { icon: RotateCcw, label: "60-Day Guarantee" },
+
   { icon: Shield, label: "FDA Approved" },
   { icon: Award, label: "GMP Certified" },
 ];
