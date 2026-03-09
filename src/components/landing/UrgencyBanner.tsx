@@ -33,17 +33,25 @@ const UrgencyBanner = () => {
     <motion.div
       initial={{ y: -50, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      className="bg-destructive text-destructive-foreground py-2.5 px-4 text-center text-sm font-body font-semibold"
+      className="bg-destructive text-destructive-foreground py-2.5 px-4 text-center text-sm font-body font-semibold flex flex-col sm:flex-row justify-center items-center gap-2 sm:gap-4"
     >
-      <span className="hidden sm:inline">🔥 FLASH SALE: </span>
-      <span>Save 25% — Ends in{" "}</span>
-      <span className="inline-flex gap-0.5 font-mono font-bold tabular-nums">
-        {pad(timeLeft.hours)}:{pad(timeLeft.minutes)}:{pad(timeLeft.seconds)}
-      </span>
-      <span className="hidden sm:inline"> — Only <strong>{stock} bottles</strong> left at this price!</span>
-      <span className="sm:hidden"> · {stock} left!</span>
+      <div className="flex items-center gap-2">
+        <span className="hidden sm:inline">🔥 FLASH SALE: </span>
+        <span>Save 25% — Ends in{" "}</span>
+        <span className="inline-flex gap-0.5 font-mono font-bold tabular-nums">
+          {pad(timeLeft.hours)}:{pad(timeLeft.minutes)}:{pad(timeLeft.seconds)}
+        </span>
+      </div>
+      <div className="flex items-center gap-2 text-[10px] sm:text-xs opacity-90">
+        <span className="bg-white/20 px-2 py-0.5 rounded-full">🚚 Shipping fee applies</span>
+        <span className="bg-white/20 px-2 py-0.5 rounded-full">✅ Pay on Delivery</span>
+      </div>
+      <div className="hidden lg:inline text-xs border-l border-white/30 pl-4">
+        Only <strong>{stock} bottles</strong> left!
+      </div>
     </motion.div>
   );
+
 };
 
 export default UrgencyBanner;

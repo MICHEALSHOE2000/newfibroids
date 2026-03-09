@@ -8,7 +8,7 @@ import { Loader2, CheckCircle2 } from "lucide-react";
 
 const OrderFormSection = () => {
   const [formData, setFormData] = useState({
-    name: "", email: "", phone: "", altPhone: "", country: "Nigeria", address: "", city: "", package: "",
+    name: "", email: "", phone: "", altPhone: "", address: "", city: "", package: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -17,9 +17,10 @@ const OrderFormSection = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const whatsappMessage = `Hi Dr. Micheal, I want to order Utero Clear.\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCountry: ${formData.country}\nAddress: ${formData.address}, ${formData.city}\nPackage: ${formData.package}`;
+  const whatsappMessage = `Hi Dr. Micheal, I want to order Utero Clear.\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nAddress: ${formData.address}, ${formData.city}\nPackage: ${formData.package}`;
 
   const handleSubmit = async (e: React.FormEvent) => {
+
     e.preventDefault();
     
     // Submit to Formspree
@@ -110,7 +111,7 @@ const OrderFormSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <Label htmlFor="phone" className="font-body">Mobile Number</Label>
-              <Input id="phone" name="phone" required value={formData.phone} onChange={handleChange} placeholder="+234..." />
+              <Input id="phone" name="phone" required value={formData.phone} onChange={handleChange} placeholder="e.g. 08012345678" />
             </div>
             <div>
               <Label htmlFor="altPhone" className="font-body">Alt Phone (optional)</Label>
@@ -118,34 +119,17 @@ const OrderFormSection = () => {
             </div>
           </div>
           <div>
-            <Label htmlFor="country" className="font-body">Country</Label>
-            <select
-              id="country"
-              name="country"
-              required
-              value={formData.country}
-              onChange={handleChange}
-              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-            >
-              <option value="">Select country</option>
-                <option value="Nigeria">Nigeria</option>
-                <option value="Ghana">Ghana</option>
-                <option value="United Kingdom">United Kingdom</option>
-                <option value="United States">United States</option>
-                <option value="Canada">Canada</option>
-                <option value="Other">Other</option>
-            </select>
-          </div>
-          <div>
             <Label htmlFor="address" className="font-body">Shipping Address</Label>
-            <Input id="address" name="address" required value={formData.address} onChange={handleChange} />
+            <Input id="address" name="address" required value={formData.address} onChange={handleChange} placeholder="House No, Street Name, Area" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
               <Label htmlFor="city" className="font-body">State / City</Label>
               <Input id="city" name="city" required value={formData.city} onChange={handleChange} placeholder="e.g. Lagos" />
+              <p className="text-[10px] text-primary font-bold mt-1">Please enter your current location for delivery.</p>
             </div>
           </div>
+
           <div>
             <Label htmlFor="package" className="font-body">Select Package</Label>
             <select
@@ -154,14 +138,15 @@ const OrderFormSection = () => {
               required
               value={formData.package}
               onChange={handleChange}
-              className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              className="flex h-12 w-full rounded-xl border border-input bg-background px-4 py-2 text-lg font-bold ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
-              <option value="">Choose package</option>
-              <option value="1 Bottle – ₦35,000">1 Bottle – ₦35,000</option>
-              <option value="2 Bottles – ₦65,000">2 Bottles – ₦65,000 (Most Popular)</option>
-              <option value="3 Bottles – ₦90,000">3 Bottles – ₦90,000 (Best Value)</option>
+              <option value="">Choose your protocol</option>
+              <option value="Utero Clear Full Protocol – ₦35,000">Utero Clear Full Protocol – ₦35,000 (Limited Offer)</option>
+              <option value="2x Full Protocol – ₦65,000">2x Full Protocol – ₦65,000 (Save ₦5,000)</option>
+              <option value="3x Full Protocol – ₦90,000">3x Full Protocol – ₦90,000 (Best Value - Save ₦15,000)</option>
             </select>
           </div>
+
           <Button 
             type="submit" 
             disabled={isSubmitting}

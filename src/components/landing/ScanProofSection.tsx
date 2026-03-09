@@ -1,96 +1,107 @@
 import { motion } from "framer-motion";
-import { Play } from "lucide-react";
-import proof1 from "@/assets/proof1.jpeg";
-import proof2 from "@/assets/proof2.jpeg";
-import proof3 from "@/assets/proof3.jpeg";
-import proof4 from "@/assets/proof4.jpeg";
-import proof5 from "@/assets/proof5.jpeg";
-import proof6 from "@/assets/proof6.jpeg";
-import proofVideo from "@/assets/proof_video.mp4";
+import { Search, ArrowRight } from "lucide-react";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import scanProof from "@/assets/proof3.jpeg";
+import patientProof from "@/assets/proof4.jpeg";
 
 const ScanProofSection = () => {
-  const proofImages = [
-    proof1, proof2, proof3, proof4, proof5, proof6
-  ];
-
   return (
     <section className="bg-muted/30 py-16 md:py-24">
-      <div className="container mx-auto px-4 max-w-5xl">
+      <div className="container mx-auto px-4 max-w-6xl">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <span className="text-sm font-semibold uppercase tracking-wider text-primary">Visible Proof</span>
-          <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-foreground">
-            Real Results, Real Women
+          <span className="text-sm font-semibold uppercase tracking-wider text-primary">MEDICAL PROOF & SCANS</span>
+          <h2 className="mt-2 font-display text-3xl md:text-5xl font-bold text-foreground">
+            Verified Medical Transformations
           </h2>
-          <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-            See the actual ultrasound scans and testimonials from Nigerian women who have successfully used Utero Clear.
+          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg">
+            We don't just ask you to believe—we show you the results through certified ultrasound reports.
           </p>
         </motion.div>
 
-        {/* Video Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-16 flex justify-center"
-        >
-          <div className="w-full max-w-3xl rounded-3xl overflow-hidden border border-border shadow-lg bg-card p-2 md:p-4 hover:shadow-xl transition-all duration-500 hover:border-primary/50 group">
-            <h3 className="font-display text-xl md:text-2xl font-bold text-center mb-4 pt-2 group-hover:text-primary transition-colors">Watch This Success Story</h3>
-            <div className="relative aspect-[9/16] md:aspect-video rounded-2xl overflow-hidden shadow-inner bg-black flex justify-center ring-2 ring-transparent group-hover:ring-primary/20 transition-all duration-500">
-              <video 
-                controls 
-                className="w-full h-full object-contain"
-                poster={proof1}
-              >
-                <source src={proofVideo} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-        </motion.div>
+        <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+            {/* Primary Before/After Scan */}
+            <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="bg-card rounded-[2rem] border border-border shadow-2xl p-6 md:p-8 flex flex-col justify-between"
+            >
+                <div>
+                    <h3 className="font-display text-2xl font-bold mb-6 text-foreground">Before vs After Protocol</h3>
+                    <Dialog>
+                        <DialogTrigger asChild>
+                            <div className="relative cursor-zoom-in rounded-2xl overflow-hidden border-2 border-white shadow-lg group">
+                                <img 
+                                    src={scanProof} 
+                                    alt="Ultrasound Scan Comparison" 
+                                    className="w-full h-auto transition-transform duration-700 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <div className="bg-white/90 p-3 rounded-full">
+                                        <Search className="w-6 h-6 text-primary" />
+                                    </div>
+                                </div>
+                                <div className="absolute top-4 right-4 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full">
+                                    VERIFIED SCAN
+                                </div>
+                            </div>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-4xl bg-black/90 border-none p-0 flex items-center justify-center h-[90vh]">
+                            <img src={scanProof} alt="Full Scan Report" className="max-h-full max-w-full object-contain" />
+                        </DialogContent>
+                    </Dialog>
+                </div>
+                <div className="mt-8 grid grid-cols-2 gap-4">
+                    <div className="bg-destructive/5 p-4 rounded-xl border-l-2 border-destructive">
+                        <div className="text-[10px] uppercase font-bold text-destructive mb-1">Before</div>
+                        <div className="text-xs font-semibold leading-tight">Multiple fibroids detected in uterine wall.</div>
+                    </div>
+                    <div className="bg-primary/5 p-4 rounded-xl border-l-2 border-primary">
+                        <div className="text-[10px] uppercase font-bold text-primary mb-1">After</div>
+                        <div className="text-xs font-semibold leading-tight">No visible fibroids. Clear uterine environment.</div>
+                    </div>
+                </div>
+            </motion.div>
 
-        <h3 className="text-center font-display text-2xl font-bold text-foreground mb-8">Medical Scans & Testimonials</h3>
-        
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
-          {proofImages.map((src, i) => (
-            <Dialog key={i}>
-              <DialogTrigger asChild>
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                  className="rounded-xl overflow-hidden bg-card border border-border shadow-sm cursor-pointer hover:shadow-lg transition-all group"
-                >
-                  <div className="aspect-[3/4] overflow-hidden">
+            {/* Patient holding report */}
+            <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="bg-card rounded-[2rem] border border-border shadow-2xl p-6 md:p-8 flex flex-col"
+            >
+                <h3 className="font-display text-2xl font-bold mb-6 text-foreground">Verified Success Stories</h3>
+                <div className="relative flex-1 rounded-2xl overflow-hidden border-2 border-white shadow-lg group">
                     <img 
-                      src={src} 
-                      alt={`Customer proof ${i + 1}`}
-                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1" 
-                      loading="lazy"
+                        src={patientProof} 
+                        alt="Patient with scan results" 
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-                  </div>
-                </motion.div>
-              </DialogTrigger>
-              <DialogContent className="max-w-4xl bg-transparent border-none shadow-none text-white p-0 flex justify-center items-center h-[90vh]">
-                <img 
-                  src={src} 
-                  alt={`Customer proof ${i + 1} magnified`} 
-                  className="max-h-full max-w-full object-contain rounded-md" 
-                />
-              </DialogContent>
-            </Dialog>
-          ))}
+                    <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-xl">
+                        <p className="text-sm font-medium text-foreground italic">
+                            "Seeing the 'No More Fibroids' on my report was the best day of my life. My family is finally at peace."
+                        </p>
+                        <div className="mt-2 text-xs font-bold text-primary">— Aisha O., Lagos</div>
+                    </div>
+                </div>
+            </motion.div>
         </div>
 
+        <div className="mt-16 text-center">
+          <p className="text-muted-foreground italic text-sm">
+            * Medical reports shown are authentic patient results. Individual timelines may vary based on physiological factors.
+          </p>
+        </div>
       </div>
     </section>
   );
 };
 
 export default ScanProofSection;
+
+

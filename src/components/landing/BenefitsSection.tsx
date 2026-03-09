@@ -1,52 +1,50 @@
 import { motion } from "framer-motion";
-import { Droplets, Target, Sparkles, Stethoscope, Heart, Zap, Activity, Scale, Battery, ShieldCheck, Baby } from "lucide-react";
+import { Package, BookOpen, Utensils, HeartPulse, CheckCircle2 } from "lucide-react";
 
-const benefits = [
-  { icon: Droplets, text: "Supports healthy blood circulation through blood vessel dilation" },
-  { icon: Target, text: "Dissolve or shrink all types and sizes of fibroids" },
-  { icon: Sparkles, text: "Remove ovarian cyst inside and outside of the womb" },
-  { icon: Stethoscope, text: "Unblock fallopian tubes for improved fertility" },
-  { icon: Heart, text: "Ease bloating, pressure, cramps, and pains" },
-  { icon: Activity, text: "Normalize frequency and volume of the menstrual period" },
-  { icon: Zap, text: "Reduce and/or eliminate blood clots" },
-  { icon: Scale, text: "Balance hormones and internal secretions" },
-  { icon: Battery, text: "Improve energy level" },
-  { icon: ShieldCheck, text: "Supports strong, healthy uterus and enhances healthy ovary function" },
-  { icon: Baby, text: "Improve chances of natural conception" },
+const items = [
+  { icon: Package, title: "Utero Clear Herbal Capsules", desc: "Our proprietary 100% natural formula designed to target fibroid tissues." },
+  { icon: Utensils, title: "Fibroid Diet Guide", desc: "Expert nutritional advice on what to eat and avoid to stop feeding fibroids." },
+  { icon: HeartPulse, title: "Hormone Balance Plan", desc: "Step-by-step instructions to naturally regulate estrogen and progesterone." },
+  { icon: BookOpen, title: "Womb Health Protocol", desc: "Daily habits and practices to maintain a healthy, fertile reproductive system." },
 ];
 
 const BenefitsSection = () => {
   return (
-    <section className="bg-background py-16 md:py-24">
-      <div className="container mx-auto px-4 max-w-5xl">
+    <section className="bg-accent/30 py-16 md:py-24 overflow-hidden relative">
+      <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+      
+      <div className="container mx-auto px-4 max-w-6xl relative z-10">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center"
+          className="text-center mb-16"
         >
-          <span className="text-sm font-semibold uppercase tracking-wider text-primary">Introducing</span>
-          <h2 className="mt-2 font-display text-3xl md:text-4xl font-bold text-foreground">Utero Clear</h2>
-          <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
-            This all-natural blend has helped thousands of women shrink fibroids without surgery. Backed by traditional eastern herbology and modern refinement, it targets the root causes and relieves symptoms fast.
-          </p>
+          <span className="text-sm font-black uppercase tracking-[0.2em] text-primary/60">WHAT YOU RECEIVE</span>
+          <h2 className="mt-4 font-display text-3xl md:text-5xl font-bold text-foreground">
+            When you start the Utero Clear protocol you receive:
+          </h2>
         </motion.div>
 
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {benefits.map((b, i) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {items.map((item, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              whileHover={{ scale: 1.02, y: -2 }}
-              className="group flex items-start gap-4 rounded-xl border border-border/50 bg-card p-5 shadow-sm hover:shadow-md hover:border-primary/30 transition-all"
+              transition={{ delay: i * 0.1 }}
+              className="bg-card p-8 rounded-[2rem] border border-border shadow-sm hover:shadow-xl transition-all group hover:-translate-y-2"
             >
-              <div className="flex-shrink-0 rounded-xl bg-accent p-3 group-hover:bg-primary transition-colors">
-                <b.icon className="h-6 w-6 text-primary group-hover:text-primary-foreground transition-colors" />
+              <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:rotate-6 transition-all duration-500">
+                <item.icon className="w-8 h-8 text-primary group-hover:text-white transition-colors" />
               </div>
-              <p className="text-sm text-foreground/90 leading-relaxed font-medium mt-0.5">{b.text}</p>
+              <h3 className="font-bold text-xl text-foreground mb-3">{item.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+              
+              <div className="mt-6 pt-4 border-t border-border flex items-center text-xs font-bold text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                <CheckCircle2 className="w-4 h-4 mr-2" /> INCLUDED IN PROTOCOL
+              </div>
             </motion.div>
           ))}
         </div>
@@ -56,3 +54,4 @@ const BenefitsSection = () => {
 };
 
 export default BenefitsSection;
+

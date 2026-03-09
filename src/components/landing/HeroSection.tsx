@@ -1,111 +1,123 @@
 import { motion } from "framer-motion";
-import { Shield, FlaskConical, HeartPulse, Users } from "lucide-react";
+import { Check, Star } from "lucide-react";
 import productImg from "@/assets/sos.jpeg";
-
-const badges = [
-  { icon: Shield, text: "NAFDAC Approved Formula" },
-  { icon: FlaskConical, text: "Clinically Researched" },
-  { icon: HeartPulse, text: "No Surgery · No Hormones" },
-  { icon: Users, text: "Used by 15,000+ Women" },
-];
 
 const HeroSection = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-background to-accent/30 pt-6 pb-16 md:pt-12 md:pb-24">
+    <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-background to-accent/30 pt-8 pb-16 md:pt-16 md:pb-24">
       {/* Decorative background blurs */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
       
-      <div className="container mx-auto px-4 max-w-5xl relative z-10">
-        {/* Trust strip */}
+      <div className="container mx-auto px-4 max-w-6xl relative z-10 text-center">
         <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-8 flex justify-center"
-        >
-          <span className="rounded-full bg-accent px-4 py-1.5 text-xs font-semibold text-accent-foreground tracking-wide">
-            🛡️ Backed by a 30-Day Money-Back Guarantee
-          </span>
-        </motion.div>
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  className="inline-block rounded-full bg-primary/10 px-4 py-1.5 text-xs font-bold text-primary tracking-wide mb-6 border border-primary/20"
+>
+  🌿 100% NATURAL HERBAL SOLUTION
+</motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="text-center font-display text-3xl md:text-5xl lg:text-[3.4rem] font-bold leading-tight text-foreground text-balance"
+          className="font-display text-3xl md:text-5xl lg:text-[3.8rem] font-extrabold leading-[1.1] text-foreground text-balance max-w-5xl mx-auto"
         >
-          Shrink Fibroids, Clear Ovarian Cysts & Open Blocked Fallopian Tubes{" "}
-          <span className="text-primary">Naturally — Without Surgery</span>
+          Shrink Fibroids, Stop Heavy Bleeding, and Relieve Pelvic Pain <span className="text-primary italic">Without Surgery</span> Using the Utero Clear Hormone Balance Method
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="mx-auto mt-5 max-w-2xl text-center text-base md:text-lg text-muted-foreground font-body"
+          className="mx-auto mt-6 max-w-3xl text-lg md:text-xl text-muted-foreground font-body leading-relaxed"
         >
-          Discover a natural, non-surgical approach that many women have used to get rid of fibroids and ovarian cysts in 2 months and improve their overall reproductive health.
+          Discover how Nigerian women are restoring womb health by correcting the hormonal environment that allows fibroids to grow — helping reduce bleeding, shrink fibroids, and improve fertility naturally.
         </motion.p>
 
-        {/* Badges */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="mt-8 flex flex-wrap justify-center gap-3"
-        >
-          {badges.map((b) => (
-            <div
-              key={b.text}
-              className="flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground shadow-sm"
-            >
-              <b.icon className="h-4 w-4 text-primary" />
-              {b.text}
+        {/* Quick Social Proof */}
+        <div className="mt-10 grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3 }}
+            className="bg-card p-5 rounded-2xl shadow-sm border border-border text-left relative overflow-hidden group hover:border-primary/30 transition-colors"
+          >
+            <div className="flex text-yellow-500 mb-2">
+              {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
             </div>
-          ))}
-        </motion.div>
+            <p className="text-sm italic text-foreground leading-relaxed">
+              “After struggling with fibroids for years, my bleeding reduced and my stomach became flat again.”
+            </p>
+            <div className="mt-2 text-xs font-bold text-muted-foreground">— Mrs. Juliet K., Abuja</div>
+          </motion.div>
 
-        {/* Product image */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="mt-10 flex justify-center relative z-10"
-        >
-          <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-150 -z-10 animate-pulse-glow" />
-          <img
-            src={productImg}
-            alt="Utero Clear supplement bottles"
-            className="w-full max-w-md rounded-2xl shadow-2xl animate-float border-4 border-white/10"
-            loading="eager"
-          />
-        </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4 }}
+            className="bg-card p-5 rounded-2xl shadow-sm border border-border text-left relative overflow-hidden group hover:border-primary/30 transition-colors"
+          >
+            <div className="flex text-yellow-500 mb-2">
+              {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
+            </div>
+            <p className="text-sm italic text-foreground leading-relaxed">
+              “Doctors told me surgery was my only option. After 4 weeks I started seeing real changes.”
+            </p>
+            <div className="mt-2 text-xs font-bold text-muted-foreground">— Ngozi A., Lagos</div>
+          </motion.div>
+        </div>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="mt-8 flex flex-col items-center gap-3"
-        >
-          <a
-            href="#order-form"
-            className="animate-pulse-glow inline-flex items-center justify-center rounded-full bg-primary px-10 py-4 text-lg font-bold text-primary-foreground shadow-lg transition-transform hover:scale-105"
+        {/* Product Image & CTA */}
+        <div className="mt-12 flex flex-col items-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="relative mb-8"
           >
-            Order Utero Clear Now →
-          </a>
-          <a
-            href="https://api.whatsapp.com/send?phone=2348080305080&text=Hi%20Dr.%20Micheal,%20I%20want%20to%20order%20the%20Utero%20Clear."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-primary font-semibold underline underline-offset-2 hover:text-primary/80"
+            <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full scale-125 -z-10 animate-pulse-glow" />
+            <img
+              src={productImg}
+              alt="Utero Clear supplement bottles"
+              className="w-full max-w-sm rounded-3xl shadow-2xl animate-float"
+              loading="eager"
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7 }}
+            className="flex flex-col items-center gap-4"
           >
-            💬 Talk To A Care Specialist
-          </a>
-        </motion.div>
+            <div className="flex items-center gap-2 text-sm font-semibold text-primary animate-bounce">
+              <Check className="w-4 h-4" /> Check If This Treatment Is Right For You
+            </div>
+            <a
+              href="#order-form"
+              className="group relative inline-flex items-center justify-center rounded-full bg-primary px-12 py-5 text-xl font-bold text-primary-foreground shadow-[0_0_40px_rgba(22,101,52,0.3)] transition-all hover:scale-105 hover:shadow-[0_0_50px_rgba(22,101,52,0.5)] active:scale-95"
+            >
+              GET THE TREATMENT GUIDE
+              <span className="absolute -top-3 -right-3 rounded-full bg-secondary px-3 py-1 text-xs font-black animate-pulse text-white shadow-lg">
+                OFFER ENDS TODAY
+              </span>
+            </a>
+
+            <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm font-bold text-muted-foreground">
+              <div className="flex items-center gap-1.5"><Check className="w-4 h-4 text-primary" /> Natural Formula</div>
+              <div className="flex items-center gap-1.5"><Check className="w-4 h-4 text-primary" /> 30-Day Guarantee</div>
+              <div className="flex items-center gap-1.5 text-foreground"><span className="text-primary">🚚</span> Shipping Fee Applies</div>
+              <div className="flex items-center gap-1.5 text-foreground"><span className="text-primary">✅</span> Pay on Delivery</div>
+            </div>
+
+          </motion.div>
+        </div>
       </div>
     </section>
   );
 };
 
 export default HeroSection;
+
