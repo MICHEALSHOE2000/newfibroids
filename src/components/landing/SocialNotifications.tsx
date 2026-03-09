@@ -31,7 +31,7 @@ const SocialNotifications = () => {
   }, []);
 
   return (
-    <div className="fixed bottom-20 md:bottom-6 left-4 z-40">
+    <div className="fixed top-24 md:top-auto md:bottom-6 left-4 z-40">
       <AnimatePresence>
         {current !== null && (
           <motion.div
