@@ -22,7 +22,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="font-display text-3xl md:text-5xl lg:text-[3.8rem] font-extrabold leading-[1.1] text-foreground text-balance max-w-5xl mx-auto"
+          className="font-display text-[1.75rem] xs:text-3xl md:text-5xl lg:text-[3.8rem] font-extrabold leading-[1.1] text-foreground text-balance max-w-5xl mx-auto"
         >
           Shrink Fibroids, Stop Heavy Bleeding, and Relieve Pelvic Pain <span className="text-primary italic">Without Surgery</span> Using the Utero Clear Hormone Balance Method
         </motion.h1>
@@ -108,7 +108,7 @@ const HeroSection = () => {
             <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm font-bold text-muted-foreground">
               <div className="flex items-center gap-1.5"><Check className="w-4 h-4 text-primary" /> Natural Formula</div>
               <div className="flex items-center gap-1.5"><Check className="w-4 h-4 text-primary" /> 30-Day Guarantee</div>
-              <div className="flex items-center gap-1.5 text-foreground"><span className="text-primary">🚚</span> Shipping Fee Applies</div>
+              <div className="flex items-center gap-1.5 text-foreground"><span className="text-primary">🚚</span> Free Nationwide Delivery</div>
               <div className="flex items-center gap-1.5 text-foreground"><span className="text-primary">✅</span> Pay on Delivery</div>
             </div>
 

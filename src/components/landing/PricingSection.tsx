@@ -38,7 +38,7 @@ const PricingSection = () => {
             <h3 className="font-bold text-xl mb-8 border-b pb-4 border-border">If you were to buy everything separately:</h3>
             <div className="space-y-6">
               {valueStack.map((v, i) => (
-                <div key={i} className="flex justify-between items-center text-lg">
+                <div key={i} className="flex justify-between items-center text-base sm:text-lg">
                   <span className="text-muted-foreground">{v.item}</span>
                   <span className="font-mono font-bold text-foreground">{v.value}</span>
                 </div>
@@ -94,11 +94,11 @@ const PricingSection = () => {
         >
             <div className="inline-flex flex-col md:flex-row items-center gap-4 bg-muted/50 px-8 py-4 rounded-2xl border border-border">
                 <div className="flex items-center gap-2 font-bold text-foreground">
-                    <span className="text-xl">🚚</span> Shipping fees apply based on your location
+                    <span className="text-xl">🚚</span> FREE Delivery Nationwide (No Shipping Fees)
                 </div>
                 <div className="hidden md:block w-px h-4 bg-border" />
                 <div className="flex items-center gap-2 font-bold text-primary">
-                    <span className="text-xl">✅</span> Pay on Delivery (POD) available nationwide
+                    <span className="text-xl">✅</span> Pay on Delivery (POD) available
                 </div>
             </div>
         </motion.div>

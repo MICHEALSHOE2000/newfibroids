@@ -44,7 +44,7 @@ const UrgencyBanner = () => {
       </div>
 
       <div className="flex items-center gap-2 text-[10px] sm:text-xs opacity-90">
-        <span className="bg-white/20 px-2 py-0.5 rounded-full">🚚 Shipping fee applies</span>
+        <span className="bg-white/20 px-2 py-0.5 rounded-full">🚚 Free nationwide delivery</span>
         <span className="bg-white/20 px-2 py-0.5 rounded-full">✅ Pay on Delivery</span>
       </div>
       <div className="hidden lg:inline text-xs border-l border-white/30 pl-4">

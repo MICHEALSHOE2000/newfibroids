@@ -150,7 +150,7 @@ const SocialProofSection = () => {
         {/* WhatsApp Proofs */}
         <div className="mb-20">
           <h3 className="font-display text-2xl md:text-3xl font-bold text-center mb-10">WhatsApp & Customer Feedback</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
             {whatsappProofs.map((src, i) => (
               <motion.div
                 key={i}

@@ -22,13 +22,13 @@ const FloatingWhatsApp = () => {
               <X className="h-3 w-3 text-muted-foreground" />
             </button>
             <p className="text-xs font-body text-foreground leading-relaxed">
-              👋 Hi! Have questions? Chat with a care specialist now.
+              👋 Hi! Have a question? Chat with a gynaecologist now.
             </p>
           </motion.div>
         )}
       </AnimatePresence>
       <motion.a
-        href="https://api.whatsapp.com/send?phone=2348080305080&text=Hi%20Dr.%20Micheal,%20I%20have%20a%20question%20about%20Utero%20Clear."
+        href="https://api.whatsapp.com/send?phone=2348080305080&text=Hi,%20I%20have%20a%20question%20for%20the%20gynaecologist%20about%20Utero%20Clear."
         target="_blank"
         rel="noopener noreferrer"
         whileHover={{ scale: 1.1 }}

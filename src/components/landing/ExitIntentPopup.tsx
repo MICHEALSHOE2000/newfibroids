@@ -65,7 +65,7 @@ const ExitIntentPopup = () => {
               Wait! Don't Leave Empty-Handed
             </h3>
             <p className="mt-2 text-sm text-muted-foreground font-body">
-              Get a <span className="font-bold text-primary">FREE Fibroid Recovery Consultation</span> when you order in the next 15 minutes.
+              Get a <span className="font-bold text-primary">FREE Fibroid Recovery Consultation</span> plus <span className="font-bold text-primary">FREE Nationwide Delivery</span> when you order in the next 15 minutes.
             </p>
 
             <Button asChild className="mt-6 w-full rounded-xl py-6 text-base font-bold animate-pulse-glow">

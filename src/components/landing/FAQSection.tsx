@@ -21,7 +21,7 @@ const faqs = [
   },
   { 
     q: "Do you deliver nationwide?", 
-    a: "Yes, we deliver to all 36 states in Nigeria. Delivery typically takes 24–48 hours. Please note that shipping fees apply and vary based on your specific location." 
+    a: "Yes, we deliver to all 36 states in Nigeria. Delivery typically takes 24–48 hours, and for a limited time, we are offering FREE nationwide delivery on all orders today." 
   }
 
 ];
