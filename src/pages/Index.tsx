@@ -18,12 +18,10 @@ import FloatingWhatsApp from "@/components/landing/FloatingWhatsApp";
 import ExitIntentPopup from "@/components/landing/ExitIntentPopup";
 import SocialNotifications from "@/components/landing/SocialNotifications";
 import ImmediateProofStrip from "@/components/landing/ImmediateProofStrip";
-import VariantNav from "@/components/landing/VariantNav";
 
 const Index = () => {
   return (
     <div className="min-h-screen w-full overflow-x-hidden pb-16 md:pb-0">
-      <VariantNav />
       <UrgencyBanner />
       <HeroSection />
       <ImmediateProofStrip />
