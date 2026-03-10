@@ -67,7 +67,7 @@ const OrderFormSection = () => {
             <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
               <CheckCircle2 className="h-10 w-10 text-primary" />
             </div>
-            <h2 className="font-display text-2xl font-bold text-foreground">Order Received!</h2>
+            <h2 className="font-display text-2xl font-bold text-foreground">Request Received!</h2>
             <p className="mt-2 text-muted-foreground">
               Thank you for choosing Utero Clear. We are now redirecting you to WhatsApp to finalize your delivery details.
             </p>
@@ -87,9 +87,9 @@ const OrderFormSection = () => {
     <section id="order-form" className="bg-background py-10 md:py-24 overflow-hidden">
       <div className="container mx-auto px-4 max-w-xl">
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mb-8">
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground">Order Utero Clear</h2>
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground">Start Your Utero Clear Plan</h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            🛡️ 60-Day Money Back Guarantee — If you're not satisfied, we'll refund you. No questions asked.
+            🛡️ 30-Day Guarantee support applies. Final terms should match your approved business policy.
           </p>
         </motion.div>
 
@@ -158,7 +158,7 @@ const OrderFormSection = () => {
                 Processing...
               </>
             ) : (
-              "🔒 Proceed to Secure Payment"
+              "Reserve My Treatment Now"
             )}
           </Button>
           <p className="text-center text-xs text-muted-foreground">Payments are processed securely.</p>

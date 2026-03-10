@@ -1,140 +1,64 @@
-import { motion } from "framer-motion";
-import { Star, Quote } from "lucide-react";
-import proofVideo from "@/assets/proof_video.mp4";
-import physicalProof from "@/assets/before-fib.jpg";
-import avatar1 from "@/assets/avatar1.jpg";
-import avatar2 from "@/assets/avatar2.jpg";
-import avatar3 from "@/assets/avatar3.jpg";
-import avatar4 from "@/assets/avatar4.jpg";
-
-const testimonials = [
-  {
-    text: "I was already preparing myself mentally for surgery. My doctor said the fibroid would only get worse. After using Utero Clear consistently, the pain reduced, the bleeding normalized, and surgery was no longer necessary.",
-    name: "Blessing A.",
-    location: "Lagos, Nigeria",
-    rating: 5,
-    image: avatar1
-  },
-
-  {
-    text: "I didn’t believe anything until I saw my scan. The fibroid had reduced significantly. My doctor kept asking what I did differently. That was the moment I knew this wasn’t another temporary solution.",
-    name: "Ifunanya O.",
-    location: "Enugu, Nigeria",
-    rating: 5,
-    image: avatar2
-  },
-  {
-    text: "For years, nothing happened. My cycle was irregular and I kept hearing ‘wait’. After treating the fibroid properly, my cycle became normal again. A few months later, I conceived.",
-    name: "Chiamaka N.",
-    location: "Owerri, Nigeria",
-    rating: 5,
-    image: avatar3
-  },
-  {
-    text: "I completed the protocol months ago. I’m not on any drug now. No pain. No heavy bleeding. Most importantly, the fibroid did not come back. I finally feel at peace in my body.",
-    name: "Ronke T.",
-    location: "Ibadan, Nigeria",
-    rating: 5,
-    image: avatar4
-  },
-];
-
+import { PlayCircle, MessageCircle, FileText } from "lucide-react";
+import PrimaryCTA from "./PrimaryCTA";
 
 const SocialProofSection = () => {
   return (
-    <section className="bg-background py-10 md:py-24 overflow-hidden">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-10 lg:mb-16"
-        >
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground">
-            How Nigerian Women Are Shrinking Fibroids Naturally Without Surgery
-          </h2>
-          <p className="mt-4 text-muted-foreground font-bold">Real scans • Real testimonies • Real results</p>
-          
-          <div className="mt-10 max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
-            <div className="aspect-[9/16] md:aspect-video w-full bg-black relative">
-              <video 
-                controls 
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full h-full object-contain"
-              >
-                <source src={proofVideo} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-              <div className="absolute top-4 left-4 z-10">
-                <div className="bg-primary/90 backdrop-blur-sm px-4 py-1.5 rounded-full text-xs font-black text-white shadow-lg flex items-center gap-2">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
-                  </span>
-                  WATCH REAL TESTIMONY
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-
-
-        {/* Featured Testimonials */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12 lg:mb-20">
-          {testimonials.map((t, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-card p-8 rounded-3xl border border-border shadow-sm relative overflow-hidden group hover:border-primary/30 transition-all"
-            >
-              <Quote className="absolute top-4 right-4 w-12 h-12 text-primary/10 group-hover:text-primary/20 transition-colors" />
-              <div className="flex text-yellow-500 mb-4">
-                {[...Array(t.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
-              </div>
-              <p className="text-foreground italic leading-relaxed mb-6 text-lg">"{t.text}"</p>
-              <div className="flex items-center gap-3">
-                <div className="w-14 h-14 rounded-full overflow-hidden bg-primary/10 border-2 border-primary/20 shrink-0">
-                  <img src={t.image} alt={t.name} className="w-full h-full object-cover" />
-                </div>
-                <div>
-                  <div className="font-bold text-foreground">{t.name}</div>
-                  <div className="text-xs text-muted-foreground">{t.location}</div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+    <section className="py-12 md:py-20">
+      <div className="container mx-auto max-w-6xl space-y-12 px-4">
+        <div>
+          <h2 className="text-center text-3xl font-bold text-foreground md:text-4xl">Proof from Real Women Using Utero Clear</h2>
+          <p className="mx-auto mt-3 max-w-3xl text-center text-sm text-muted-foreground md:text-base">
+            We use placeholders below where final media assets or approved compliance wording are still pending.
+          </p>
         </div>
 
-        {/* Visible Physical Transformation */}
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-12 lg:mb-24 text-center"
-        >
-            <h3 className="font-display text-2xl md:text-3xl font-bold mb-10">Visible Physical Transformation</h3>
-            <div className="max-w-4xl mx-auto rounded-[2rem] overflow-hidden border-4 border-white shadow-2xl relative group">
-                <img src={physicalProof} alt="Before and After Transformation" className="w-full h-auto transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute top-6 left-6 bg-destructive/90 text-white text-xs font-black px-4 py-2 rounded-full shadow-lg">BEFORE</div>
-                <div className="absolute top-6 right-6 bg-primary/90 text-white text-xs font-black px-4 py-2 rounded-full shadow-lg">AFTER</div>
-                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/95 backdrop-blur-sm px-6 py-3 rounded-2xl shadow-xl w-[90%] md:w-auto">
-                    <p className="text-sm font-bold text-foreground">
-                        Real patient results after 8 weeks of the Utero Clear protocol.
-                    </p>
-                </div>
+        <div>
+          <h3 className="text-2xl font-semibold text-foreground">Video testimonials</h3>
+          <div className="mt-4 grid gap-4 md:grid-cols-3">
+            {[1, 2, 3].map((n) => (
+              <div key={n} className="rounded-2xl border border-dashed border-border bg-card p-6 text-center">
+                <PlayCircle className="mx-auto h-8 w-8 text-primary" />
+                <p className="mt-3 text-sm font-medium">Video testimonial placeholder {n}</p>
+                <p className="mt-1 text-xs text-muted-foreground">Replace with approved customer video embed.</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h3 className="text-2xl font-semibold text-foreground">Real Messages from Women Who Tried Utero Clear</h3>
+          <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-4">
+            {Array.from({ length: 8 }).map((_, i) => (
+              <div key={i} className="aspect-[9/16] rounded-2xl border border-dashed border-border bg-card p-4">
+                <MessageCircle className="h-5 w-5 text-primary" />
+                <p className="mt-3 text-xs font-medium">WhatsApp screenshot placeholder</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <h3 className="text-2xl font-semibold text-foreground">Ultrasound / scan proof (placeholders)</h3>
+          <div className="mt-4 grid gap-4 md:grid-cols-2">
+            <div className="rounded-2xl border border-dashed border-border bg-card p-5">
+              <FileText className="h-5 w-5 text-destructive" />
+              <p className="mt-3 font-semibold">Before: fibroid scan/result</p>
+              <p className="text-xs text-muted-foreground">Placeholder only — replace with patient-approved document.</p>
             </div>
-        </motion.div>
+            <div className="rounded-2xl border border-dashed border-border bg-card p-5">
+              <FileText className="h-5 w-5 text-primary" />
+              <p className="mt-3 font-semibold">After: improved follow-up scan/result</p>
+              <p className="text-xs text-muted-foreground">Placeholder only — replace with verified follow-up report.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="text-center">
+          <PrimaryCTA text="Reserve My Treatment Now" />
+        </div>
       </div>
     </section>
   );
 };
 
 export default SocialProofSection;
-

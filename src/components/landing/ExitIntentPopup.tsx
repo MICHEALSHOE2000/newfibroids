@@ -1,83 +1,67 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { X, Gift } from "lucide-react";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 const ExitIntentPopup = () => {
-  const [show, setShow] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const dismissed = sessionStorage.getItem("utero-exit-dismissed");
-    if (dismissed) return;
+    if (sessionStorage.getItem("utero-popup-dismissed")) return;
 
-    const handler = (e: MouseEvent) => {
-      if (e.clientY < 10) {
-        setShow(true);
-        document.removeEventListener("mouseout", handler);
+    const handleMouseOut = (event: MouseEvent) => {
+      if (window.innerWidth >= 768 && event.clientY <= 8) {
+        setOpen(true);
       }
     };
 
-    // Also trigger after 45 seconds on mobile (no mouseout)
-    const timer = setTimeout(() => {
-      if (!sessionStorage.getItem("utero-exit-dismissed")) {
-        setShow(true);
+    const mobileTimer = setTimeout(() => {
+      if (window.innerWidth < 768) {
+        setOpen(true);
       }
-    }, 45000);
+    }, 18000);
 
-    document.addEventListener("mouseout", handler);
+    document.addEventListener("mouseout", handleMouseOut);
     return () => {
-      document.removeEventListener("mouseout", handler);
-      clearTimeout(timer);
+      clearTimeout(mobileTimer);
+      document.removeEventListener("mouseout", handleMouseOut);
     };
   }, []);
 
-  const dismiss = () => {
-    setShow(false);
-    sessionStorage.setItem("utero-exit-dismissed", "1");
+  const close = () => {
+    setOpen(false);
+    sessionStorage.setItem("utero-popup-dismissed", "1");
   };
 
   return (
     <AnimatePresence>
-      {show && (
+      {open && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-foreground/60 backdrop-blur-sm p-4"
-          onClick={dismiss}
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/55 p-4"
+          onClick={close}
         >
           <motion.div
-            initial={{ scale: 0.85, opacity: 0 }}
+            initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.85, opacity: 0 }}
+            exit={{ scale: 0.95, opacity: 0 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-md rounded-2xl bg-card border border-border p-6 md:p-8 shadow-2xl text-center"
+            className="relative w-full max-w-md rounded-2xl border border-border bg-card p-6"
           >
-            <button onClick={dismiss} className="absolute top-3 right-3 text-muted-foreground hover:text-foreground">
-              <X className="h-5 w-5" />
+            <button aria-label="Close popup" className="absolute right-4 top-4" onClick={close}>
+              <X className="h-5 w-5 text-muted-foreground" />
             </button>
-
-            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent">
-              <Gift className="h-8 w-8 text-primary" />
-            </div>
-
-            <h3 className="font-display text-xl md:text-2xl font-bold text-foreground">
-              Wait! Don't Leave Empty-Handed
-            </h3>
-            <p className="mt-2 text-sm text-muted-foreground font-body">
-              Get a <span className="font-bold text-primary">FREE Fibroid Recovery Consultation</span> plus <span className="font-bold text-primary">FREE Nationwide Delivery</span> when you order in the next 15 minutes.
-            </p>
-
-            <Button asChild className="mt-6 w-full rounded-xl py-6 text-base font-bold animate-pulse-glow">
-              <a href="#order-form" onClick={dismiss}>
-                Claim My Free Consultation →
-              </a>
-            </Button>
-
-            <button onClick={dismiss} className="mt-3 text-xs text-muted-foreground underline font-body">
-              No thanks, I'll pay full price
-            </button>
-
+            <h3 className="text-xl font-bold text-foreground">Before you go, get the free fibroid warning signs guide.</h3>
+            <p className="mt-2 text-sm text-muted-foreground">Quick, practical tips for early action and safer decision-making.</p>
+            {/* Integration note: connect this popup form to same lead capture endpoint as guide form. */}
+            <form className="mt-5 space-y-3">
+              <Input placeholder="Name" required />
+              <Input placeholder="Phone number" required />
+              <Button className="w-full rounded-full">Send Me the Free Guide</Button>
+            </form>
           </motion.div>
         </motion.div>
       )}

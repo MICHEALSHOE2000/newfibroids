@@ -1,65 +1,52 @@
-import { motion } from "framer-motion";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { HelpCircle } from "lucide-react";
+import PrimaryCTA from "./PrimaryCTA";
 
 const faqs = [
-  { 
-    q: "How long before I see results?", 
-    a: "Many women report improvements in 2–4 weeks. This includes reduced bleeding, less pain, and a noticeable reduction in stomach size as the fibroids begin to shrink." 
+  {
+    q: "How long does it take to start noticing changes?",
+    a: "Many women start noticing early changes within 10–30 days, but timelines vary by body system, consistency, and existing condition. Regular check-ins with your healthcare provider are recommended.",
   },
-  { 
-    q: "Is it natural?", 
-    a: "Yes. Utero Clear uses 100% plant-based herbal ingredients. It is formulated to work with your body's natural healing processes without the side effects of synthetic hormonal drugs." 
+  {
+    q: "Is Utero Clear a natural herbal product?",
+    a: "Utero Clear is presented as a natural herbal support protocol focused on hormone and womb health support.",
   },
-  { 
-    q: "Do I still need surgery?", 
-    a: "Some women avoid surgery after improving womb health and successfully shrinking their fibroids using our protocol. However, results vary based on the size and type of fibroids. We always recommend monitoring your progress with ultrasound scans." 
+  {
+    q: "Do I still need surgery?",
+    a: "Utero Clear is not a replacement for medical diagnosis. Your doctor is best placed to advise if surgery is necessary for your case.",
   },
-  { 
-    q: "Is it safe for long-term use?", 
-    a: "Yes, the Utero Clear protocol is designed to be a safe, natural way to maintain hormonal balance even after your fibroids have cleared." 
+  {
+    q: "Can I use it if I have already been diagnosed with fibroids?",
+    a: "Many diagnosed women explore non-surgical support options. It is best to use Utero Clear alongside professional monitoring and follow-up scans.",
   },
-  { 
-    q: "Do you deliver nationwide?", 
-    a: "Yes, we deliver to all 36 states in Nigeria. Delivery typically takes 24–48 hours, and for a limited time, we are offering FREE nationwide delivery on all orders today." 
-  }
-
+  {
+    q: "How do I place my order?",
+    a: "Fill the order form on this page, then our team will guide you on confirmation and delivery steps.",
+  },
+  {
+    q: "Is there a guarantee?",
+    a: "Yes, there is a 30-day guarantee policy. Please review the final approved policy terms before purchase.",
+  },
 ];
 
 const FAQSection = () => {
   return (
-    <section className="bg-background py-10 md:py-24 overflow-hidden">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-10 lg:mb-16"
-        >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary font-bold text-sm mb-4">
-                <HelpCircle className="w-4 h-4" /> GOT QUESTIONS?
-            </div>
-            <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground">
-                Common Questions
-            </h2>
-        </motion.div>
-
-        <Accordion type="single" collapsible className="space-y-4">
-          {faqs.map((f, i) => (
-            <AccordionItem key={i} value={`faq-${i}`} className="rounded-[1.5rem] border border-border bg-card px-8 py-2 shadow-sm hover:shadow-md transition-shadow">
-              <AccordionTrigger className="text-left font-bold text-foreground font-display text-lg md:text-xl hover:no-underline">
-                {f.q}
-              </AccordionTrigger>
-              <AccordionContent className="text-base text-muted-foreground leading-relaxed md:text-lg">
-                {f.a}
-              </AccordionContent>
+    <section className="py-12 md:py-20">
+      <div className="container mx-auto max-w-4xl px-4">
+        <h2 className="text-center text-3xl font-bold text-foreground md:text-4xl">Frequently Asked Questions</h2>
+        <Accordion type="single" collapsible className="mt-8 space-y-4">
+          {faqs.map((faq, i) => (
+            <AccordionItem key={faq.q} value={`faq-${i}`} className="rounded-2xl border border-border bg-card px-5">
+              <AccordionTrigger className="text-left font-semibold hover:no-underline">{faq.q}</AccordionTrigger>
+              <AccordionContent className="text-sm leading-relaxed text-muted-foreground md:text-base">{faq.a}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
+        <div className="mt-8 text-center">
+          <PrimaryCTA text="Reserve My Treatment Now" />
+        </div>
       </div>
     </section>
   );
 };
 
 export default FAQSection;
-
