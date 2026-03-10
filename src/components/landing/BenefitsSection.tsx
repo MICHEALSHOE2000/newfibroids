@@ -27,7 +27,7 @@ const BenefitsSection = () => (
           Every woman’s body is different, but seeing others share their progress can give you the confidence to take the next step.
         </p>
         <a href="#order-form" className="mt-6 inline-flex rounded-full bg-primary px-8 py-4 text-sm font-bold text-primary-foreground shadow-lg">
-          See If Utero Clear Is Right For Me
+          Start My Recovery Journey
         </a>
       </div>
     </div>
