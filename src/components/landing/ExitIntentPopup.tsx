@@ -19,13 +19,13 @@ const ExitIntentPopup = () => {
       }
     };
 
-    // Delay popup triggers until visitor has spent at least 30 seconds on page.
+    // Delay popup triggers until visitor has spent at least 1 minute on page.
     const timer = setTimeout(() => {
       popupReady = true;
       if (!sessionStorage.getItem("utero-exit-dismissed")) {
         setShow(true);
       }
-    }, 30000);
+    }, 60000);
 
     document.addEventListener("mouseout", handler);
     return () => {
