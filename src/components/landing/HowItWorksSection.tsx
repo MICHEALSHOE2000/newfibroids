@@ -1,124 +1,59 @@
-import { motion } from "framer-motion";
-import { CheckCircle2, Zap, Droplets, Heart, Activity } from "lucide-react";
+import { Activity, Droplets, Flower2, Microscope, ArrowRight } from "lucide-react";
+import PrimaryCTA from "./PrimaryCTA";
 
-const benefits = [
-  "Reduced bleeding",
-  "Less pelvic pain",
-  "Smaller stomach size",
-  "Improved fertility health",
+const causes = [
+  { icon: Activity, title: "Hormonal imbalance" },
+  { icon: Flower2, title: "Excess estrogen activity" },
+  { icon: Droplets, title: "Inflammation" },
+  { icon: Microscope, title: "Poor womb environment" },
+];
+
+const steps = [
+  "Supports hormone balance",
+  "Helps reduce internal conditions that support fibroid discomfort",
+  "Promotes better womb health and symptom relief",
 ];
 
 const HowItWorksSection = () => {
   return (
-    <section className="bg-background py-10 md:py-24">
-      <div className="container mx-auto px-4 max-w-5xl">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          className="text-center mb-10 lg:mb-16"
-        >
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-6">
-            The Utero Clear Hormone Balance Method
-          </h2>
-          <p className="mt-4 text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Utero Clear focuses on correcting the internal conditions that allow fibroids to grow. Instead of simply masking symptoms, this protocol works by:
+    <section className="bg-accent/30 py-12 md:py-20">
+      <div className="container mx-auto max-w-6xl space-y-12 px-4">
+        <div>
+          <h2 className="text-3xl font-bold text-foreground md:text-4xl">Why Fibroids May Keep Coming Back or Growing</h2>
+          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted-foreground md:text-base">
+            Many approaches focus only on short-term symptom control. But lasting progress may require supporting the internal conditions linked to fibroid growth and discomfort.
           </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="space-y-6"
-          >
-            {[
-              { icon: Zap, title: "Supporting hormone balance", desc: "Regulates estrogen levels to stop fibroid fuel." },
-              { icon: Droplets, title: "Reducing inflammation", desc: "Decreases the swelling and irritation in the womb." },
-              { icon: Activity, title: "Improving womb circulation", desc: "Enhances blood flow to support natural healing." },
-              { icon: Heart, title: "Gradual Shrinkage", desc: "Helping fibroids lose mass and break down naturally." },
-            ].map((item, i) => (
-              <div key={i} className="flex gap-4 p-4 rounded-2xl bg-card border border-border hover:shadow-md transition-shadow">
-                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                  <item.icon className="w-6 h-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-lg text-foreground">{item.title}</h4>
-                  <p className="text-sm text-muted-foreground">{item.desc}</p>
-                </div>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {causes.map((cause) => (
+              <div key={cause.title} className="rounded-2xl border border-border bg-card p-5">
+                <cause.icon className="h-6 w-6 text-primary" />
+                <p className="mt-3 font-semibold text-foreground">{cause.title}</p>
               </div>
             ))}
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="bg-primary/5 rounded-3xl p-8 md:p-12 border border-primary/10"
-          >
-            <h3 className="font-display text-2xl font-bold text-foreground mb-6">
-              Many women report improvements such as:
-            </h3>
-            <ul className="space-y-4">
-              {benefits.map((b, i) => (
-                <li key={i} className="flex items-center gap-3 text-lg font-medium text-foreground">
-                  <CheckCircle2 className="w-6 h-6 text-primary" /> {b}
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+          </div>
+          <p className="mt-6 text-sm font-medium text-foreground md:text-base">
+            Utero Clear is designed to support a healthier internal environment so fibroids are less supported.
+          </p>
+          <div className="mt-6">
+            <PrimaryCTA text="Check If Utero Clear Is Right For Me" />
+          </div>
         </div>
 
-        {/* Why This Works */}
-        <div className="mt-24 pt-16 border-t border-border">
-          <div className="grid md:grid-cols-2 gap-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-6">Why Fibroids Grow</h3>
-              <p className="text-muted-foreground mb-6 text-lg">Fibroids thrive in a womb environment affected by:</p>
-              <ul className="space-y-4">
-                {[
-                  "Hormonal imbalance (Estrogen dominance)",
-                  "Poor blood circulation in the pelvic area",
-                  "Chronic Inflammation",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-foreground font-medium bg-card p-4 rounded-xl border border-border">
-                    <span className="w-2 h-2 rounded-full bg-destructive" /> {item}
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-6 text-foreground italic">If these factors are corrected, fibroids often lose the conditions they need to grow.</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-primary rounded-3xl p-8 md:p-10 text-primary-foreground shadow-2xl"
-            >
-              <h3 className="font-display text-2xl md:text-3xl font-bold mb-6 italic underline underline-offset-8 decoration-white/20">How Utero Clear Helps</h3>
-              <p className="mb-8 text-primary-foreground/90 text-lg">The protocol works by supporting:</p>
-              <ul className="grid gap-4">
-                {[
-                  "Hormonal regulation",
-                  "Natural detoxification pathways",
-                  "Uterine circulation",
-                  "Reproductive health balance",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-lg font-bold">
-                    <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-                      <CheckCircle2 className="w-5 h-5" />
-                    </div>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+        <div>
+          <h2 className="text-3xl font-bold text-foreground md:text-4xl">How Utero Clear Works</h2>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {steps.map((step, idx) => (
+              <div key={step} className="rounded-2xl border border-border bg-background p-5">
+                <p className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
+                  {idx + 1}
+                </p>
+                <p className="mt-4 text-sm text-foreground md:text-base">{step}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 flex items-center gap-2 text-sm text-primary">
+            <ArrowRight className="h-4 w-4" />
+            <span>Follow the protocol consistently and track your progress with your healthcare provider.</span>
           </div>
         </div>
       </div>
@@ -127,4 +62,3 @@ const HowItWorksSection = () => {
 };
 
 export default HowItWorksSection;
-
