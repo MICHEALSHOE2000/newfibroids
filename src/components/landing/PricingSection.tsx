@@ -80,7 +80,7 @@ const PricingSection = () => {
               href="#order-form"
               className="bg-white text-primary text-xl font-black py-6 rounded-2xl text-center shadow-[0_20px_40px_rgba(0,0,0,0.2)] hover:scale-105 active:scale-95 transition-all animate-pulse-glow"
             >
-              START YOUR FIBROID RECOVERY TODAY
+              Reserve My Treatment Plan
             </a>
           </motion.div>
         </div>
