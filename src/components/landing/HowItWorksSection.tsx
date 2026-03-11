@@ -1,7 +1,5 @@
 import { Leaf, HeartPulse, ShieldCheck } from "lucide-react";
-import productImage from "@/assets/product.jpeg";
-import proof1 from "@/assets/proof1.jpeg";
-import proof2 from "@/assets/proof2.jpeg";
+import productImage from "@/assets/productimg.jpeg";
 
 const steps = [
   {
@@ -37,15 +35,9 @@ const HowItWorksSection = () => (
         ))}
       </div>
 
-      <div className="mt-10 grid gap-4 md:grid-cols-3">
+      <div className="mt-10 grid gap-4 md:grid-cols-1">
         <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
           <img src={productImage} alt="Utero Clear product" className="h-56 w-full object-cover md:h-full" loading="lazy" />
-        </div>
-        <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-          <img src={proof1} alt="Fibroid condition before support" className="h-56 w-full object-cover" loading="lazy" />
-        </div>
-        <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-          <img src={proof2} alt="Improvement after using Utero Clear" className="h-56 w-full object-cover" loading="lazy" />
         </div>
       </div>
     </div>

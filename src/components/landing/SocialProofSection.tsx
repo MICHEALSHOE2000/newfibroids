@@ -1,17 +1,12 @@
-import { PlayCircle } from "lucide-react";
-import proof1 from "@/assets/proof1.jpeg";
-import proof2 from "@/assets/proof2.jpeg";
 import proof3 from "@/assets/proof3.jpeg";
 import proof4 from "@/assets/proof4.jpeg";
 import proof5 from "@/assets/proof5.jpeg";
 import proof6 from "@/assets/proof6.jpeg";
 
 const proofCards = [
-  { type: "Before support", label: "Fibroid symptoms shared", image: proof1 },
-  { type: "After support", label: "Recovery progress shared", image: proof2 },
-  { type: "Ultrasound scan", label: "Initial scan", image: proof3 },
-  { type: "Testimony", label: "Follow-up story", image: proof4 },
-  { type: "Video story", label: "Heavy bleeding story", image: proof6 },
+  { type: "Ultrasound scan", label: "Initial scan", image: proof3, featured: true },
+  { type: "Before and after", label: "Follow-up testimony", image: proof4 },
+  { type: "Patient story", label: "Heavy bleeding story", image: proof6 },
   { type: "Ultrasound scan", label: "Follow-up scan", image: proof5 },
 ];
 
@@ -31,12 +26,17 @@ const SocialProofSection = () => {
 
         <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5">
           {proofCards.map((card) => (
-            <div key={`${card.type}-${card.label}`} className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+            <div
+              key={`${card.type}-${card.label}`}
+              className={`overflow-hidden rounded-2xl border border-border bg-card shadow-sm ${card.featured ? "col-span-2 md:col-span-2" : ""}`}
+            >
               <div className="relative">
-                <img src={card.image} alt={card.type} className="h-44 w-full object-cover md:h-56" loading="lazy" />
-                {card.type === "Video story" && (
-                  <PlayCircle className="absolute left-1/2 top-1/2 h-12 w-12 -translate-x-1/2 -translate-y-1/2 text-white drop-shadow" />
-                )}
+                <img
+                  src={card.image}
+                  alt={card.type}
+                  className={`w-full object-cover ${card.featured ? "h-60 md:h-80" : "h-44 md:h-56"}`}
+                  loading="lazy"
+                />
               </div>
               <div className="p-3">
                 <p className="text-xs font-semibold uppercase tracking-wide text-primary">{card.type}</p>
@@ -48,7 +48,7 @@ const SocialProofSection = () => {
 
         <div className="mt-8 text-center">
           <a href="#order-form" className="inline-flex rounded-full bg-primary px-8 py-4 text-sm font-bold text-primary-foreground shadow-lg">
-            View Real Patient Proof
+            Be the Next to Shrink Fibroid
           </a>
         </div>
       </div>
