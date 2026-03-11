@@ -7,11 +7,11 @@ import proof5 from "@/assets/proof5.jpeg";
 import proof6 from "@/assets/proof6.jpeg";
 
 const proofCards = [
+  { type: "Before support", label: "Fibroid symptoms shared", image: proof1 },
+  { type: "After support", label: "Recovery progress shared", image: proof2 },
   { type: "Ultrasound scan", label: "Initial scan", image: proof3 },
-  { type: "WhatsApp screenshot", label: "Lagos", image: proof1 },
-  { type: "Testimony", label: "Reported improvement", image: proof4 },
+  { type: "Testimony", label: "Follow-up story", image: proof4 },
   { type: "Video story", label: "Heavy bleeding story", image: proof6 },
-  { type: "WhatsApp screenshot", label: "Abuja", image: proof2 },
   { type: "Ultrasound scan", label: "Follow-up scan", image: proof5 },
 ];
 

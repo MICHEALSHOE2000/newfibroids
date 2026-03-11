@@ -20,7 +20,7 @@ const VideoTestimonialsSection = () => (
         {labels.map((label) => (
           <div key={label} className="overflow-hidden rounded-2xl border border-border bg-black shadow-lg">
             <div className="relative aspect-video">
-              <video src={proofVideo} className="h-full w-full object-cover opacity-80" muted playsInline />
+              <video src={proofVideo} className="h-full w-full object-contain object-bottom opacity-90" muted playsInline />
               <PlayCircle className="absolute left-1/2 top-1/2 h-14 w-14 -translate-x-1/2 -translate-y-1/2 text-white" />
             </div>
             <div className="bg-card p-4">

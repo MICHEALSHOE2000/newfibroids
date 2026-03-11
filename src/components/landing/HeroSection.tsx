@@ -25,13 +25,6 @@ const HeroSection = () => {
             If you have been battling heavy bleeding, pelvic pain, pressure, bloating, or fear of surgery, this page will show you why many women are choosing a different path.
           </p>
 
-          <a
-            href="#order-form"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-primary px-10 py-4 text-base font-black uppercase tracking-wide text-primary-foreground shadow-[0_14px_30px_rgba(0,0,0,0.2)] ring-2 ring-primary/20 transition hover:scale-[1.03]"
-          >
-            Start My Recovery Journey
-          </a>
-
           <div className="mt-8 grid gap-3 rounded-2xl border border-border bg-card p-5 text-left md:grid-cols-2">
             {heroBullets.map((item) => (
               <div key={item} className="flex items-start gap-2 text-sm font-medium text-foreground">
