@@ -1,11 +1,14 @@
-const whatsappProofs = [
-  "https://fibroidtreatment.xyz/img/testimony.webp",
-  "https://fibroidtreatment.xyz/img/testimonial.webp",
-  "https://fibroidtreatment.xyz/img/testimon.webp",
-  "https://fibroidtreatment.xyz/img/testimo.webp",
-  "https://fibroidtreatment.xyz/img/testim.webp",
-  "https://fibroidtreatment.xyz/img/testi.webp",
-  "https://fibroidtreatment.xyz/img/test.webp",
+import proof1 from "@/assets/proof1.jpeg";
+import proof2 from "@/assets/proof2.jpeg";
+import proof6 from "@/assets/proof6.jpeg";
+
+const chats = [
+  { city: "Lagos", image: proof1 },
+  { city: "Abuja", image: proof2 },
+  { city: "Enugu", image: proof6 },
+  { city: "Port Harcourt", image: proof1 },
+  { city: "Ibadan", image: proof2 },
+  { city: "Benin", image: proof6 },
 ];
 
 const WhatsAppFeedback = () => (
@@ -13,12 +16,13 @@ const WhatsAppFeedback = () => (
     <div className="container mx-auto max-w-6xl px-4">
       <h2 className="text-center font-display text-3xl font-bold md:text-4xl">Real Messages from Women Across Nigeria</h2>
       <p className="mx-auto mt-3 max-w-3xl text-center text-muted-foreground">
-        WhatsApp screenshot messages shared by women reporting bleeding, pain, pressure, and scan feedback.
+        Women sharing improvements in bleeding, pain, pressure, scan feedback, and confidence.
       </p>
-      <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
-        {whatsappProofs.map((src, idx) => (
-          <div key={`${src}-${idx}`} className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-            <img src={src} alt="WhatsApp testimonial screenshot" className="h-56 w-full object-cover" loading="lazy" />
+      <div className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-6">
+        {chats.map((chat, idx) => (
+          <div key={`${chat.city}-${idx}`} className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+            <img src={chat.image} alt={`WhatsApp ${chat.city}`} className="h-44 w-full object-cover" loading="lazy" />
+            <div className="p-2 text-center text-xs font-semibold text-primary">{chat.city}</div>
           </div>
         ))}
       </div>

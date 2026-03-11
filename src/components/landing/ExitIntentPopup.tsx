@@ -19,10 +19,13 @@ const ExitIntentPopup = () => {
       }
     };
 
-    // Let visitors read first: enable popup only after 2 minutes on page.
+    // Delay popup triggers until visitor has spent at least 1 minute on page.
     const timer = setTimeout(() => {
       popupReady = true;
-    }, 120000);
+      if (!sessionStorage.getItem("utero-exit-dismissed")) {
+        setShow(true);
+      }
+    }, 60000);
 
     document.addEventListener("mouseout", handler);
     return () => {

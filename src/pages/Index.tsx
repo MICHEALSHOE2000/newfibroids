@@ -5,7 +5,6 @@ import PainPointsSection from "@/components/landing/PainPointsSection";
 import WhyBeyondSurgerySection from "@/components/landing/WhyBeyondSurgerySection";
 import FibroidGrowthSection from "@/components/landing/FibroidGrowthSection";
 import HowItWorksSection from "@/components/landing/HowItWorksSection";
-import ProductShowcaseSection from "@/components/landing/ProductShowcaseSection";
 import ScanProofSection from "@/components/landing/ScanProofSection";
 import WhatsAppFeedback from "@/components/landing/WhatsAppFeedback";
 import VideoTestimonialsSection from "@/components/landing/VideoTestimonialsSection";
@@ -31,7 +30,6 @@ const Index = () => {
       <WhyBeyondSurgerySection />
       <FibroidGrowthSection />
       <HowItWorksSection />
-      <ProductShowcaseSection />
       <ScanProofSection />
       <WhatsAppFeedback />
       <VideoTestimonialsSection />
