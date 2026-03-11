@@ -140,10 +140,10 @@ const OrderFormSection = () => {
               onChange={handleChange}
               className="flex h-12 w-full rounded-xl border border-input bg-background px-4 py-2 text-lg font-bold ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
             >
-              <option value="">Choose your protocol</option>
-              <option value="Utero Clear Full Protocol – ₦35,000">Utero Clear Full Protocol – ₦35,000 (Limited Offer)</option>
-              <option value="2x Full Protocol – ₦65,000">2x Full Protocol – ₦65,000 (Save ₦5,000)</option>
-              <option value="3x Full Protocol – ₦90,000">3x Full Protocol – ₦90,000 (Best Value - Save ₦15,000)</option>
+              <option value="">Choose your treatment plan</option>
+              <option value="1 Bottle – ₦35,000">1 Bottle – ₦35,000</option>
+              <option value="2 Bottles – ₦50,000">2 Bottles – ₦50,000</option>
+              <option value="3 Bottles – ₦70,000">3 Bottles – ₦70,000</option>
             </select>
           </div>
 
