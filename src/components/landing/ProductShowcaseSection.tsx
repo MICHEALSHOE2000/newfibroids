@@ -1,4 +1,4 @@
-import productImg from "@/assets/product.jpeg";
+import productImg from "@/assets/productimg.jpeg";
 
 const ProductShowcaseSection = () => (
   <section className="bg-background py-8 md:py-12">
