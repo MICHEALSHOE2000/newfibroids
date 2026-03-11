@@ -11,16 +11,8 @@ const VideoTestimonialsSection = () => (
       <div className="mx-auto mt-8 max-w-2xl">
         <div className="overflow-hidden rounded-2xl border border-border bg-black shadow-lg">
           <div className="relative aspect-video">
-            <video
-              src={proofVideo}
-              className="h-full w-full object-contain object-bottom opacity-90"
-              autoPlay
-              loop
-              muted
-              playsInline
-              controls
-              preload="metadata"
-            />
+            <video src={proofVideo} className="h-full w-full object-contain object-bottom opacity-90" muted playsInline />
+            <PlayCircle className="absolute left-1/2 top-1/2 h-14 w-14 -translate-x-1/2 -translate-y-1/2 text-white" />
           </div>
           <div className="bg-card p-4">
             <p className="font-semibold">Heavy bleeding story</p>
