@@ -7,43 +7,12 @@ import proof5 from "@/assets/proof5.jpeg";
 import proof6 from "@/assets/proof6.jpeg";
 
 const proofCards = [
-  {
-    type: "Ultrasound scan",
-    label: "Initial scan (before/after scan testimony)",
-    image: proof3,
-    note: "Before and after comparison shared by a patient.",
-    large: true,
-  },
-  {
-    type: "WhatsApp screenshot",
-    label: "Lagos",
-    image: proof1,
-    note: "Patient scan showing fibroid evidence.",
-  },
-  {
-    type: "Testimony",
-    label: "Reported improvement",
-    image: proof4,
-    note: "Shared after consistent use and follow-up.",
-  },
-  {
-    type: "Video story",
-    label: "Heavy bleeding story",
-    image: proof6,
-    note: "Previous scan and surgery-related fear story.",
-  },
-  {
-    type: "WhatsApp screenshot",
-    label: "Abuja",
-    image: proof2,
-    note: "Patient scan shared after reported healing progress.",
-  },
-  {
-    type: "Ultrasound scan",
-    label: "Follow-up scan",
-    image: proof5,
-    note: "Scan feedback reported after monitoring.",
-  },
+  { type: "Ultrasound scan", label: "Initial scan", image: proof3 },
+  { type: "WhatsApp screenshot", label: "Lagos", image: proof1 },
+  { type: "Testimony", label: "Reported improvement", image: proof4 },
+  { type: "Video story", label: "Heavy bleeding story", image: proof6 },
+  { type: "WhatsApp screenshot", label: "Abuja", image: proof2 },
+  { type: "Ultrasound scan", label: "Follow-up scan", image: proof5 },
 ];
 
 const SocialProofSection = () => {
@@ -62,17 +31,9 @@ const SocialProofSection = () => {
 
         <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-5">
           {proofCards.map((card) => (
-            <div
-              key={`${card.type}-${card.label}`}
-              className={`overflow-hidden rounded-2xl border border-border bg-card shadow-sm ${card.large ? "col-span-2 md:col-span-2" : ""}`}
-            >
+            <div key={`${card.type}-${card.label}`} className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
               <div className="relative">
-                <img
-                  src={card.image}
-                  alt={card.type}
-                  className={`${card.large ? "h-64 md:h-80" : "h-44 md:h-56"} w-full object-cover`}
-                  loading="lazy"
-                />
+                <img src={card.image} alt={card.type} className="h-44 w-full object-cover md:h-56" loading="lazy" />
                 {card.type === "Video story" && (
                   <PlayCircle className="absolute left-1/2 top-1/2 h-12 w-12 -translate-x-1/2 -translate-y-1/2 text-white drop-shadow" />
                 )}
@@ -80,18 +41,14 @@ const SocialProofSection = () => {
               <div className="p-3">
                 <p className="text-xs font-semibold uppercase tracking-wide text-primary">{card.type}</p>
                 <p className="text-sm font-medium text-foreground">{card.label}</p>
-                <p className="mt-1 text-xs text-muted-foreground">{card.note}</p>
               </div>
             </div>
           ))}
         </div>
 
         <div className="mt-8 text-center">
-          <a
-            href="#order-form"
-            className="inline-flex rounded-full bg-primary px-8 py-4 text-sm font-bold text-primary-foreground shadow-lg transition hover:scale-[1.02]"
-          >
-            Start My Recovery Journey
+          <a href="#order-form" className="inline-flex rounded-full bg-primary px-8 py-4 text-sm font-bold text-primary-foreground shadow-lg">
+            View Real Patient Proof
           </a>
         </div>
       </div>
