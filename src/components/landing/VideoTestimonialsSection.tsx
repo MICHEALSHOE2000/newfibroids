@@ -1,3 +1,4 @@
+import { PlayCircle } from "lucide-react";
 import proofVideo from "@/assets/proof_video.mp4";
 
 const VideoTestimonialsSection = () => (
