@@ -8,7 +8,7 @@ import { Loader2, CheckCircle2 } from "lucide-react";
 
 const OrderFormSection = () => {
   const [formData, setFormData] = useState({
-    name: "", email: "", phone: "", altPhone: "", address: "", city: "", package: "",
+    name: "", phone: "", altPhone: "", address: "", city: "", package: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -17,7 +17,7 @@ const OrderFormSection = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const whatsappMessage = `Hi, I want to order Utero Clear.\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nAddress: ${formData.address}, ${formData.city}\nPackage: ${formData.package}`;
+  const whatsappMessage = `Hi, I want to order Utero Clear.\n\nName: ${formData.name}\nPhone: ${formData.phone}\nAddress: ${formData.address}, ${formData.city}\nPackage: ${formData.package}`;
 
   const handleSubmit = async (e: React.FormEvent) => {
 
@@ -35,7 +35,6 @@ const OrderFormSection = () => {
         body: JSON.stringify({
           ...formData,
           _subject: `New Order: ${formData.package} - ${formData.name}`,
-          _replyto: formData.email,
         }),
       });
 
@@ -43,7 +42,7 @@ const OrderFormSection = () => {
         setIsSubmitted(true);
         toast.success("Order received! Redirecting to WhatsApp...");
         setTimeout(() => {
-          window.open(`https://api.whatsapp.com/send?phone=2347086865133&text=${encodeURIComponent(whatsappMessage)}`, "_blank");
+          window.open(`https://api.whatsapp.com/send?phone=2349037925799&text=${encodeURIComponent(whatsappMessage)}`, "_blank");
         }, 1500);
       } else {
         toast.error("Something went wrong. Please try again.");
@@ -72,7 +71,7 @@ const OrderFormSection = () => {
               Thank you for choosing Utero Clear. We are now redirecting you to WhatsApp to finalize your delivery details.
             </p>
             <Button 
-              onClick={() => window.open(`https://api.whatsapp.com/send?phone=2347086865133&text=${encodeURIComponent(whatsappMessage)}`, "_blank")}
+              onClick={() => window.open(`https://api.whatsapp.com/send?phone=2349037925799&text=${encodeURIComponent(whatsappMessage)}`, "_blank")}
               className="mt-8 rounded-xl px-10 py-6"
             >
               Continue to WhatsApp
@@ -103,10 +102,6 @@ const OrderFormSection = () => {
           <div>
             <Label htmlFor="name" className="font-body">Full Name</Label>
             <Input id="name" name="name" required value={formData.name} onChange={handleChange} placeholder="Your full name" />
-          </div>
-          <div>
-            <Label htmlFor="email" className="font-body">Email Address</Label>
-            <Input id="email" name="email" type="email" required value={formData.email} onChange={handleChange} placeholder="your@email.com" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
